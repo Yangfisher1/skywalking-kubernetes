@@ -268,7 +268,8 @@ elasticsearch:
     accessModes: [ "ReadWriteOnce" ]
     resources:
       requests:
-        storage: 30Gi
+        storage: 10Gi
+    storageClassName: standard
 
   rbac:
     create: false
@@ -293,7 +294,7 @@ elasticsearch:
         - persistentVolumeClaim
 
   persistence:
-    enabled: false
+    enabled: true
     annotations: {}
 
   extraVolumes: ""
