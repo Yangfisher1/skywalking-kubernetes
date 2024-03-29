@@ -43,7 +43,7 @@ oap:
     rest: 12800
     # zipkinreceiver: 9411
     # zipkinquery: 9412
-  replicas: 2
+  replicas: 1
   service:
     type: ClusterIP
   javaOpts: -Xmx2g -Xms2g
@@ -201,7 +201,7 @@ elasticsearch:
     ingest: "true"
     data: "true"
 
-  replicas: 3
+  replicas: 2
   minimumMasterNodes: 2
 
   esMajorVersion: ""
@@ -294,7 +294,7 @@ elasticsearch:
         - persistentVolumeClaim
 
   persistence:
-    enabled: true
+    enabled: false
     annotations: {}
 
   extraVolumes: ""
