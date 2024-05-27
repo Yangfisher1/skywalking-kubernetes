@@ -32,8 +32,8 @@ initContainer:
 oap:
   name: oap
   image:
-    repository: skywalking.docker.scarf.sh/apache/skywalking-oap-server
-    tag: null  # Must be set explicitly
+    repository: yuhanyang01/sw_oap
+    tag: latest  # Must be set explicitly
     pullPolicy: IfNotPresent
   storageType: null
   ports:
@@ -41,8 +41,8 @@ oap:
     # zabbix: 10051
     grpc: 11800
     rest: 12800
-    # zipkinreceiver: 9411
-    # zipkinquery: 9412
+    zipkinreceiver: 9411
+    zipkinquery: 9412
   replicas: 1
   service:
     type: ClusterIP
@@ -124,8 +124,8 @@ ui:
   name: ui
   replicas: 1
   image:
-    repository: skywalking.docker.scarf.sh/apache/skywalking-ui
-    tag: null  # Must be set explicitly
+    repository: yuhanyang01/sw_oap
+    tag: latest # Must be set explicitly
     pullPolicy: IfNotPresent
   # podAnnotations:
   #   example: oap-foo
