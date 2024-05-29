@@ -124,8 +124,8 @@ ui:
   name: ui
   replicas: 1
   image:
-    repository: yuhanyang01/sw_oap
-    tag: latest # Must be set explicitly
+    repository: skywalking.docker.scarf.sh/apache/skywalking-ui
+    tag: null # Must be set explicitly
     pullPolicy: IfNotPresent
   # podAnnotations:
   #   example: oap-foo
