@@ -32,9 +32,9 @@ initContainer:
 oap:
   name: oap
   image:
-    repository: yuhanyang01/sw_oap
+    repository: val14:5000/sw_oap
     tag: latest  # Must be set explicitly
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
   storageType: null
   ports:
     # add more ports here if you need, for example
@@ -43,7 +43,7 @@ oap:
     rest: 12800
     zipkinreceiver: 9411
     zipkinquery: 9412
-  replicas: 1
+  replicas: 2
   service:
     type: ClusterIP
   javaOpts: -Xmx2g -Xms2g
@@ -201,7 +201,7 @@ elasticsearch:
     ingest: "true"
     data: "true"
 
-  replicas: 2
+  replicas: 3
   minimumMasterNodes: 2
 
   esMajorVersion: ""
