@@ -43,10 +43,10 @@ oap:
     rest: 12800
     zipkinreceiver: 9411
     zipkinquery: 9412
-  replicas: 2
+  replicas: 6
   service:
     type: ClusterIP
-  javaOpts: -Xmx2g -Xms2g
+  javaOpts: -Xmx8g -Xms8g
   antiAffinity: "soft"
   nodeAffinity: {}
   nodeSelector: {}
@@ -236,15 +236,15 @@ elasticsearch:
   # additionals labels
   labels: {}
 
-  esJavaOpts: "-Xmx1g -Xms1g"
+  esJavaOpts: "-Xmx4g -Xms4g"
 
   resources:
     requests:
-      cpu: "100m"
-      memory: "2Gi"
+      cpu: "1"
+      memory: "4Gi"
     limits:
-      cpu: "1000m"
-      memory: "2Gi"
+      cpu: "4"
+      memory: "8Gi"
 
   initResources: {}
     # limits:
